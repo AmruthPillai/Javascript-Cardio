@@ -65,7 +65,16 @@ function chunkArray(arr, len) {
 // CHALLENGE 3: FLATTEN ARRAY
 // Take an array of arrays and flatten to a single array
 // ex. [[1, 2], [3, 4], [5, 6], [7]] = [1, 2, 3, 4, 5, 6, 7]
-function flattenArray(arrays) { }
+function flattenArray(arrays) {
+    // Method 1 -----
+    // return arrays.reduce((a, b) => a.concat(b));
+
+    // Method 2 -----
+    // return [].concat.apply([], arrays);
+
+    // Method 3 -----
+    return [].concat(...arrays);
+}
 
 // CHALLENGE 4: ANAGRAM
 // Return true if anagram and false if not
@@ -80,6 +89,6 @@ function isAnagram(str1, str2) { }
 function letterChanges(str) { }
 
 // Call Function
-const output = chunkArray([1, 2, 3, 4, 5, 6, 7], 3);
+const output = flattenArray([[1, 2], [3, 4], [5, 6], [7]]);
 
 console.log(output);
