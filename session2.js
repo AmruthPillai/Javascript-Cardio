@@ -80,7 +80,19 @@ function flattenArray(arrays) {
 // Return true if anagram and false if not
 // ex. 'elbow' === 'below'
 // ex. 'Dormitory' === 'dirty room##'
-function isAnagram(str1, str2) { }
+function isAnagram(str1, str2) {
+    return formatString(str1) === formatString(str2);
+}
+
+// Helper Function
+function formatString(str) {
+    return str
+        .toLowerCase()
+        .replace(/[^\w]/g, '')
+        .split('')
+        .sort()
+        .join('');
+}
 
 // CHALLENGE 5: LETTER CHANGES
 // Change every letter of the string to the one that follows it and capitalize the vowels
@@ -89,6 +101,6 @@ function isAnagram(str1, str2) { }
 function letterChanges(str) { }
 
 // Call Function
-const output = flattenArray([[1, 2], [3, 4], [5, 6], [7]]);
+const output = isAnagram('Dormitory', 'dirty room###');
 
 console.log(output);
