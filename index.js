@@ -88,13 +88,34 @@ function capitalizeLetters(str) {
 // CHALLENGE 5: MAX CHARACTER
 // Return the character that is most common in a string
 // ex. maxCharacter('javascript') == 'a'
-function maxCharacter(str) {}
+function maxCharacter(str) {
+    const charMap = {};
+    let maxNum = 0, maxChar = '';
+
+    str.split('').forEach(char => {
+        if (charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1;
+        }
+    })
+    
+    for (let char in charMap) {
+        // debugger;
+        if (charMap[char] > maxNum) {
+            maxNum = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
+}
 
 // CHALLENGE 6: FIZZBUZZ
 // Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
 function fizzBuzz() {}
 
 // Call Function
-const output = capitalizeLetters('i love javascript');
+const output = maxCharacter('javascript');
 
 console.log(output);
