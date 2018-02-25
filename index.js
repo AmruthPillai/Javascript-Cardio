@@ -3,7 +3,44 @@
 // ex. reverseString('hello') === 'olleh'
 
 function reverseString(str) {
-    return 'Let\'s Start'
+    // Method 1 -----
+    // return str
+    //     .split('')
+    //     .reverse()
+    //     .join('');
+
+    // Method 2 -----
+    // let revString = '';
+    // for (let i = str.length - 1; i >= 0; i--) {
+    //     revString = revString + str[i];
+    // }
+    // return revString;
+
+    // Method 3 -----
+    // let revString = '';
+    // for (let i = 0; i <= str.length - 1; i++) {
+    //     revString = str[i] + revString;
+    // }
+    // return revString;
+
+    // Method 4 -----
+    // let revString = '';
+    // for (let char of str) {
+    //     revString = char + revString;
+    // }
+    // return revString;
+
+    // Method 5 -----
+    // let revString = '';
+    // str.split('').forEach(char => {
+    //     revString = char + revString;
+    // })
+    // return revString;
+
+    // Method 6 -----
+    return str.split('').reduce((revString, char) => {
+        return char + revString;
+    }, '')
 }
 
 // CHALLENGE 2: VALIDATE A PALINDROME
